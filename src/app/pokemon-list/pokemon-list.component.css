@@ -1,0 +1,115 @@
+h1 {
+  text-align: center;
+  margin: 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: red;
+  font-weight: bold;
+}
+.pokemon-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 30px;
+  justify-content: center;
+
+  height: 85vh;
+}
+.box {
+  width: 10%;
+  height: 300px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 10px;
+  min-width: 200px;
+  margin: 4px;
+}
+
+.box .description {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.box h3 {
+  font-weight: bold;
+  text-shadow: 0.5px 1px 1px rgb(44, 43, 43);
+  color: white;
+}
+.box .boxImg {
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(56, 56, 56, 0.6);
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 0 50px;
+}
+.box .boxImg img {
+  width: 100%;
+  height: 100%;
+  transition: all linear 0.6s;
+  cursor: pointer;
+}
+.box .hoverImg {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 0;
+  left: 0px;
+  opacity: 0;
+}
+.box .boxImg:hover .firstImg {
+  opacity: 0;
+}
+.box .boxImg:hover .hoverImg {
+  opacity: 1;
+}
+
+.box .description p {
+  padding: 4px;
+}
+.type {
+  background-color: rgb(27, 26, 26);
+  border-radius: 5px;
+  box-shadow: 1px 2px 4px rgba(255, 254, 254, 0.5);
+  margin: 20px 60px;
+  padding: 2px;
+  font-weight: bold;
+  color: white;
+}
+.rock {
+  background-color: rgb(148, 81, 81);
+}
+.ghost {
+  background-color: rgb(247, 247, 247);
+}
+.electric {
+  background-color: rgb(255, 255, 161);
+}
+.bug {
+  background-color: #f6d6a7;
+}
+.poison {
+  background-color: #e0a7f6;
+}
+.normal {
+  background-color: #f4f4f4;
+}
+.fairy {
+  background-color: rgba(255, 192, 203, 0.863);
+}
+.fire {
+  background-color: #fbe3df;
+}
+.grass {
+  background-color: #bdf3bc;
+}
+.water {
+  background-color: #c7e6fd;
+}
+pagination-controls {
+  align-items: center;
+}
