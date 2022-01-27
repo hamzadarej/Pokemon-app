@@ -1,4 +1,5 @@
 <nav>
   <img src="../../assets/image/Pokeball-Vector-Logo.png" />
-  <input type="text" placeholder="Search for Poke...." />
+  <input type="text" placeholder="Search for Poke...." #name />
+  <button type="button" (click)="newMessage(name.value)">Search</button>
 </nav>

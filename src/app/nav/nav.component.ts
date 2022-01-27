@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter ,Output, Input} from '@angular/core';
+import { Router ,ActivatedRoute} from '@angular/router';
+import { DataService } from '../service/data.service';
 
 
 @Component({
@@ -8,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+
+  searchName:string="";
+  
+
+constructor(private dataService: DataService,private router: Router,private route:ActivatedRoute) { }
+
 
   ngOnInit(): void {
+    
+    this.dataService.currentMessage.subscribe(
+      (message) => (this.searchName = message)
+    );
+    
   }
-
+  newMessage(value:string){
+    this.dataService.setMessage(value);
+    this.router.routeReuseStrategy.shouldReuseRoute =()=>false;
+    this.router.onSameUrlNavigation="reload";
+    this.router.navigate(['/'],{relativeTo:this.route});
+  }
+ /* public search(value:string){
+    this.emmitSearch.emit(value);
+  }
+*/
 }
