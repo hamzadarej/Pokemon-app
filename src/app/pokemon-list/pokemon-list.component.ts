@@ -10,7 +10,7 @@ export class PokemonListComponent implements OnInit {
   pokemonData: any[] = [];
   pokemonsNumber: number = 0;
   page = 1;
-  
+
   constructor(private dataService: DataService) {}
   userInput: string = '';
   ngOnInit(): void {
