@@ -111,5 +111,6 @@ h1 {
   background-color: #c7e6fd;
 }
 pagination-controls {
-  align-items: center;
+  text-align: center;
+  width: 100%;
 }

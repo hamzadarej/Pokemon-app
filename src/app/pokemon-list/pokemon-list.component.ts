@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../service/data.service';
 
 @Component({
@@ -10,16 +10,18 @@ export class PokemonListComponent implements OnInit {
   pokemonData: any[] = [];
   pokemonsNumber: number = 0;
   page = 1;
-
-  @Input() title: string | undefined;
-
+  
   constructor(private dataService: DataService) {}
   userInput: string = '';
   ngOnInit(): void {
     this.getPokemon();
 
     this.dataService.getMessage().subscribe((message) => {
-      console.log(message), (this.userInput = message);
+      console.log(message),
+        (this.userInput = message),
+        // html running before ts so to update the user input i have to empty that array and call the function to get that filtered data
+        (this.pokemonData = []),
+        this.getPokemon();
     });
   }
 
@@ -43,8 +45,5 @@ export class PokemonListComponent implements OnInit {
           }
         });
       });
-  }
-  public getSearch(value: string) {
-    console.log(value);
   }
 }
