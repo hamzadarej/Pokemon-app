@@ -6,15 +6,15 @@ nav {
   width: auto;
   border: 1px solid rgb(224, 217, 217);
   border-radius: 15px;
-  background-color:rgb(120, 207, 120);
+  background-color: rgb(79, 151, 247);
 }
 nav img {
   max-height: 90%;
-border-radius: 50%;}
-
+  border-radius: 50%;
+}
 nav input {
   width: 50%;
-  max-width:400px;
+  max-width: 400px;
   height: 3.5vh;
   border: 1px solid rgb(167, 164, 164);
   border-radius: 10px;

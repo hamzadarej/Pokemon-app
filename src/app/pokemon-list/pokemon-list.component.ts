@@ -24,9 +24,7 @@ export class PokemonListComponent implements OnInit {
         this.getPokemon();
     });
   }
-
   // getPokemon
-
   getPokemon() {
     console.log(this.userInput);
     this.dataService

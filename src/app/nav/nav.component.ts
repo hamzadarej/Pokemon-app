@@ -9,7 +9,7 @@ import { DataService } from '../service/data.service';
 })
 export class NavComponent implements OnInit {
   searchName: string = '';
-
+  
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
