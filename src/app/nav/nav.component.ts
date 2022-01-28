@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { DataService } from '../service/data.service';
 
 @Component({
@@ -18,6 +17,6 @@ export class NavComponent implements OnInit {
     );
   }
   getValue(value: string) {
-    this.dataService.setMessage(value);
+    this.dataService.setMessage(value.toLowerCase().trim());
   }
 }

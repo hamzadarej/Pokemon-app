@@ -1,13 +1,13 @@
 <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
-
-<div class="pokemon-container">
+<div class="error-message" *ngIf="error">{{errorMessage}}</div>
+<div class="pokemon-container" >
   <div
     class="box"
     class="{{ pokemon.types[0].type.name }}"
     *ngFor="
       let pokemon of pokemonData
         | paginate
-          : { itemsPerPage: 12, currentPage: page, totalItems: pokemonsNumber }
+          : { itemsPerPage: 12, currentPage: page, totalItems: pokemonNumber }
     "
   >
     <img src="../../assets/image/pokeball.png" alt="poke-ball" class="poke-ball"/>
