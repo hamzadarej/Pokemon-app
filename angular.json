@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "practice-app:build:production"
+              "browserTarget": "Pokemon-app:build:production"
             },
             "development": {
-              "browserTarget": "practice-app:build:development"
+              "browserTarget": "Pokemon-app:build:development"
             }
           },
           "defaultConfiguration": "development"
