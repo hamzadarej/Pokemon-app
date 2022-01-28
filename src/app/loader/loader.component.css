@@ -3,6 +3,6 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    height:71vh;
-    
+  position:absolute;
+  top:250px;
 }

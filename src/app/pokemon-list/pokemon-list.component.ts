@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../service/data.service';
-import {  faSkullCrossbones , faShieldAlt ,faTachometerAlt,faArrowsAltV,faHeartbeat,faWeight} from '@fortawesome/free-solid-svg-icons';
+import {
+  faSkullCrossbones,
+  faShieldAlt,
+  faTachometerAlt,
+  faArrowsAltV,
+  faHeartbeat,
+  faWeight,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -10,14 +17,15 @@ import {  faSkullCrossbones , faShieldAlt ,faTachometerAlt,faArrowsAltV,faHeartb
 export class PokemonListComponent implements OnInit {
   pokemonData: any[] = [];
   pokemonNumber: number = 0;
+  pokemonLimit: number = 16;
   page = 1;
   //icons variables
-  faSkullCrossbones=faSkullCrossbones;
-  faShieldAlt=faShieldAlt;
-  faTachometerAlt=faTachometerAlt;
-  faArrowsAltV=faArrowsAltV;
-  faHeartbeat=faHeartbeat;
-  faWeight=faWeight;
+  faSkullCrossbones = faSkullCrossbones;
+  faShieldAlt = faShieldAlt;
+  faTachometerAlt = faTachometerAlt;
+  faArrowsAltV = faArrowsAltV;
+  faHeartbeat = faHeartbeat;
+  faWeight = faWeight;
 
   constructor(private dataService: DataService) {}
   userInput: string = '';
@@ -25,16 +33,23 @@ export class PokemonListComponent implements OnInit {
   errorMessage: string = '';
   ngOnInit(): void {
     this.getPokemon();
+
     this.dataService.getMessage().subscribe((message) => {
-      (this.userInput = message),
-        // html running before ts so to update the pokemonData i have to empty that array and call the function to get that filtered data
-        (this.pokemonData = []),
-        this.getPokemon();
+      this.userInput = message;
+      //if the user enter something its going to get all the pokemon-list from the Api and search through
+      if (this.userInput.length !== 0) {
+        this.pokemonLimit = 94;
+      } else {
+        this.pokemonLimit = 16;
+        this.pokemonData = [];
+      }
+      // html running before ts so to update the pokemonData i have to empty that array and call the function to get that filtered data
+      (this.pokemonData = []), this.getPokemon();
     });
   }
   // getPokemon
   getPokemon() {
-    this.dataService.getPokemon(16, this.page + 0).subscribe(
+    this.dataService.getPokemon(this.pokemonLimit, this.page + 0).subscribe(
       (response: any) => {
         //set totalPokemonNumber
         this.pokemonNumber = response.count;
