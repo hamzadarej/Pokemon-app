@@ -1,29 +1,24 @@
-h1 {
-  text-align: center;
-  margin: 10px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: red;
-  font-weight: bold;
-}
 .pokemon-container {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-top: 30px;
+  margin-top: 40px;
   justify-content: center;
-
-  height: 85vh;
+align-items: center;
+  height: auto;
 }
 .box {
   width: 10%;
-  height: 300px;
+  height: 285px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
   text-align: center;
-  padding: 10px;
-  min-width: 200px;
-  margin: 4px;
+  padding: 1px;
+  min-width: 195px;
+  margin: 35px 10px;
+  position: relative;
+  z-index: 3;
+  border-radius: 40px;
 }
 
 .box .description {
@@ -33,19 +28,22 @@ h1 {
   flex-wrap: wrap;
   text-align: center;
 }
-.box h3 {
-  font-weight: bold;
-  text-shadow: 0.5px 1px 1px rgb(44, 43, 43);
-  color: white;
+.box .poke-ball {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: -80px;
+  left: -26px;
+  right: 0px;
+  opacity: 0.9;
+  z-index: 1;
 }
 .box .boxImg {
-  border: 1px solid gray;
-  border-radius: 5px;
-  box-shadow: 1px 1px 3px rgba(56, 56, 56, 0.6);
-  width: 120px;
+  width: 150px;
   height: 100px;
   position: relative;
-  margin: 0 40px;
+  margin: 0 20px;
+  z-index: 2;
 }
 .box .boxImg img {
   width: 100%;
@@ -67,50 +65,68 @@ h1 {
 .box .boxImg:hover .hoverImg {
   opacity: 1;
 }
+.box .poke-name h3 {
+  text-shadow: 1px 2px 2px rgb(51, 175, 233);
+  color: black;
+  z-index: 3;
+  position: relative;
+  font-size: 20px;
+  font-family: italic;
+  letter-spacing: 1px;
+}
 
 .box .description p {
-  padding: 4px;
+  padding: 0px;
 }
 .type {
   background-color: rgb(27, 26, 26);
   border-radius: 5px;
   box-shadow: 1px 2px 4px rgba(255, 254, 254, 0.5);
-  margin: 20px 60px;
+  margin: 20px 50px 10px 50px;
   padding: 2px;
   font-weight: bold;
   color: white;
 }
 .rock {
-  background-color: rgb(148, 81, 81);
+  background-color: #BFB6AE;
 }
 .ghost {
-  background-color: rgb(247, 247, 247);
+  background-color: #A6A6A6;
 }
 .electric {
-  background-color: rgb(255, 255, 161);
+  background-color:#0777D9;
 }
 .bug {
-  background-color: #f6d6a7;
+  background-color:#A68F49;
 }
 .poison {
-  background-color: #e0a7f6;
+  background-color: #8C3B7F;
 }
 .normal {
   background-color: #f4f4f4;
 }
 .fairy {
-  background-color: rgba(255, 192, 203, 0.863);
+  background-color: #E6B3C0;
 }
 .fire {
-  background-color: #fbe3df;
+  background-color: #F26513;
 }
 .grass {
-  background-color: #bdf3bc;
+  background-color: #72A603;
 }
 .water {
-  background-color: #c7e6fd;
+  background-color: #0A89A6;
+}
+.fighting {
+  background-color: #262626;
+}
+.psychic {
+  background-color: #F2B66D
+}
+.ground {
+  background-color: #8C8C8C;
 }
 pagination-controls {
   text-align: center;
-  width: 100%;
+  width: 90%;
 }

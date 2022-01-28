@@ -8,6 +8,7 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -15,7 +16,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
   declarations: [
     AppComponent,
     NavComponent,
-    PokemonListComponent
+    PokemonListComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

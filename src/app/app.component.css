@@ -1,7 +1,12 @@
 .body {
   width: auto;
+ min-height:100vh;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }

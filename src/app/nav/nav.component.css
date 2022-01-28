@@ -1,27 +1,47 @@
 nav {
-  height: 7vh;
+  height: 6vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: auto;
   border: 1px solid rgb(224, 217, 217);
-  border-radius: 15px;
-  background-color: rgb(79, 151, 247);
+  background-color: rgb(209, 223, 241);
+  overflow: hidden;
 }
-nav img {
-  max-height: 90%;
-  border-radius: 50%;
+nav:hover {
+  background-color: rgb(105, 165, 243);
+}
+nav h1 {
+  font-family: "Pokemon Solid", sans-serif;
+  text-shadow: 4px 2px 5px blue;
+  color: rgb(245, 230, 22);
+  letter-spacing: 5px;
+  margin-top: 10px;
+  font-size:30px;
 }
 nav input {
-  width: 50%;
-  max-width: 400px;
+  max-width: 200px;
   height: 3.5vh;
   border: 1px solid rgb(167, 164, 164);
   border-radius: 10px;
   background-color: #f5f5f5;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  color: #000000;
   text-align: center;
+  letter-spacing: 2px;
 }
+@media screen and (max-width: 500px) {
+  nav { 
+    width: 100%;
+  }
+  nav input {
+    max-width: 120px;
+    font-size: 14px;
+    letter-spacing:1px
+  }
+  nav h1 {
+    font-size: 18px;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+  }
