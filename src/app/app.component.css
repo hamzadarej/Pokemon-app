@@ -1,6 +1,6 @@
 .body {
   width: auto;
- min-height:100vh;
+  min-height: 100vh;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -10,4 +10,5 @@
   justify-content: space-between;
   flex-direction: column;
   position: relative;
+  background-image: linear-gradient(to top, white 0%, black 100%);
 }
