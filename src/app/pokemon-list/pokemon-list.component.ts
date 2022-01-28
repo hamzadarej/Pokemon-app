@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../service/data.service';
+import {  faSkullCrossbones , faShieldAlt ,faTachometerAlt,faArrowsAltV,faHeartbeat,faWeight} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -10,6 +11,13 @@ export class PokemonListComponent implements OnInit {
   pokemonData: any[] = [];
   pokemonNumber: number = 0;
   page = 1;
+  //icons variables
+  faSkullCrossbones=faSkullCrossbones;
+  faShieldAlt=faShieldAlt;
+  faTachometerAlt=faTachometerAlt;
+  faArrowsAltV=faArrowsAltV;
+  faHeartbeat=faHeartbeat;
+  faWeight=faWeight;
 
   constructor(private dataService: DataService) {}
   userInput: string = '';
@@ -19,7 +27,7 @@ export class PokemonListComponent implements OnInit {
     this.getPokemon();
     this.dataService.getMessage().subscribe((message) => {
       (this.userInput = message),
-        // html running before ts so to update the user input i have to empty that array and call the function to get that filtered data
+        // html running before ts so to update the pokemonData i have to empty that array and call the function to get that filtered data
         (this.pokemonData = []),
         this.getPokemon();
     });
@@ -36,7 +44,7 @@ export class PokemonListComponent implements OnInit {
             this.dataService.getMoreData(element.name).subscribe(
               (response: any) => {
                 this.pokemonData.push(response);
-                this.error=false;
+                this.error = false;
               },
               //handling error getMoreData
               (error) => {

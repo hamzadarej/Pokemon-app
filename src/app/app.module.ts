@@ -11,6 +11,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FooterComponent } from './footer/footer.component';
 import { LoaderComponent } from './loader/loader.component';
 import {LoaderInterceptor} from './loader/loader-intercepter';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -28,7 +29,8 @@ import {LoaderInterceptor} from './loader/loader-intercepter';
     HttpClientModule,
     MatProgressSpinnerModule,
     BrowserAnimationsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FontAwesomeModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:LoaderInterceptor,multi:true}

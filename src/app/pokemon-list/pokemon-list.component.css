@@ -23,12 +23,22 @@ align-items: center;
   
 }
 
-.box .description {
+.box .description ,span{
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
   text-align: center;
+}
+.box .description span {
+ flex-direction: column;
+ align-items: flex-start;
+}
+fa-icon{ 
+  padding: 0px 10px;
+ font-size:22px;
+  color:rgb(70, 62, 62);
+  
 }
 .box .poke-ball {
   width: 250px;
@@ -77,9 +87,6 @@ align-items: center;
   letter-spacing: 1px;
 }
 
-.box .description p {
-  padding: 0px;
-}
 .type {
   background-color: rgb(27, 26, 26);
   border-radius: 5px;
@@ -111,7 +118,7 @@ align-items: center;
   background-color: #E6B3C0;
 }
 .fire {
-  background-color: #F26513;
+  background-color: #f24713;
 }
 .grass {
   background-color: #72A603;
@@ -138,3 +145,4 @@ pagination-controls {
   font-family: "Pokemon Solid", sans-serif;
   letter-spacing:3px;
 }
+
