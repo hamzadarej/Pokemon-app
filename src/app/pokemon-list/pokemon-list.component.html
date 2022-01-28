@@ -1,6 +1,7 @@
 <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
-<div class="error-message" *ngIf="error">{{errorMessage}}</div>
+
 <div class="pokemon-container" >
+<div class="error-message" *ngIf="error">{{errorMessage}}</div>
   <div
     class="box"
     class="{{ pokemon.types[0].type.name }}"
@@ -41,7 +42,8 @@
       </div>
     
    
-  </div> <pagination-controls
+  </div> 
+</div>
+<pagination-controls
       (pageChange)="page = $event; pokemonData = []; getPokemon()"
     ></pagination-controls>
-</div>

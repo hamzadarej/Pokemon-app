@@ -36,6 +36,7 @@ export class PokemonListComponent implements OnInit {
             this.dataService.getMoreData(element.name).subscribe(
               (response: any) => {
                 this.pokemonData.push(response);
+                this.error=false;
               },
               //handling error getMoreData
               (error) => {
@@ -44,6 +45,10 @@ export class PokemonListComponent implements OnInit {
                 console.log(error, 'error');
               }
             );
+          } else {
+            this.error = true;
+            this.errorMessage =
+              'Pokemon with this name Not Found ! try with another Name';
           }
         });
       },
