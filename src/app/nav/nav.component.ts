@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { DataService } from '../service/data.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { DataService } from '../service/data.service';
 export class NavComponent implements OnInit {
   userInput: string = '';
   selectedValue: string = 'default';
+  @Input() title: string | undefined;
 
   constructor(private dataService: DataService) {}
 
