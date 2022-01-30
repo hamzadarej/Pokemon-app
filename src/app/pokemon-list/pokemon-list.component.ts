@@ -20,9 +20,12 @@ export class PokemonListComponent implements OnInit {
   pokemonNumber: number = 0;
   pokemonLimit: number = 16;
   pokemonMode:string="";
-  page = 1;
+  page :number= 1;
   shiny: boolean = false;
   default: boolean = true;
+  userInput: string = '';
+  error: boolean = false;
+  errorMessage: string = '';
   //icons variables
   faSkullCrossbones = faSkullCrossbones;
   faShieldAlt = faShieldAlt;
@@ -32,9 +35,6 @@ export class PokemonListComponent implements OnInit {
   faWeight = faWeight;
 
   constructor(private dataService: DataService) {}
-  userInput: string = '';
-  error: boolean = false;
-  errorMessage: string = '';
   ngOnInit(): void {
     this.getPokemon();
     this.getInputUndFilter();
@@ -74,7 +74,6 @@ export class PokemonListComponent implements OnInit {
           if (element.name.includes(this.userInput)) {
             this.dataService.getMoreData(element.name).subscribe(
               (response: any) => {
-                console.log(response);
                 this.pokemonData.push(response);
                 this.error = false;
               },
@@ -82,7 +81,6 @@ export class PokemonListComponent implements OnInit {
               (error) => {
                 this.error = true;
                 this.errorMessage = `Something went wrong ${error.message}`;
-                console.log(error, 'error');
               }
             );
           } else {
@@ -96,7 +94,6 @@ export class PokemonListComponent implements OnInit {
       (error) => {
         this.error = true;
         this.errorMessage = `Something went wrong ${error.message}`;
-        console.log(error, 'error');
       }
     );
   }

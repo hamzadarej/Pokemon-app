@@ -30,7 +30,7 @@ nav input {
   font-family: "Roboto", sans-serif;
   text-align: center;
   letter-spacing: 2px; 
-  transition:ease-in-out 3s;
+  transition:ease-in-out 0.5s;
 }
 nav input:hover {
   background-color: rgb(187, 184, 142);
