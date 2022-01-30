@@ -33,21 +33,28 @@ the header contains the following elements:
 
 create a body component (name it PokemonListComponent) contains the following elements:
 
-- list of pokemon with a different background color its depending on the pokemon type (grass, fire, water etc)
+- louping through the pokemon data and creating a list of pokemon cards
+- add a different background color to the cards its depending on the pokemon type (grass, fire, water etc)
 - include background image for each pokemon as open pokemon-ball image
 - include icons to describe the pokemon details (height, weight, health, attack, defense, speed)
-- add a hover effect to the pokemon image to show the pokemon back-side
+- add a hover effect to the pokemon image to show the pokemon from back-side
 - implement pagination to show the next pokemon-list
-- get the user input value && the pokemonMode value from the service through a method getMessage() in order to filter the list of the pokemon and change the pokemon image mode
-
+- get the user input value && the pokemonMode value from the service through a method getMessage() && getMode in order to filter the list of the pokemon and change the pokemon image mode
 
 ## footer
 
 -create a footer component (name it FooterComponent)
+
 - add a copyright text
 
 ## Error handling
 
+- implement a RouterModule(router-outlet) to move between not found page and the main
 - implement a loading spinner to handle the delay of the server response its loading till getting 200 status response
 - implement a error message to show it to the user if the server response with an error or if the pokemon is not found
 - handling the not existing route and get a link to back to pokemon list component
+
+## feature improvements
+
+- add a landing page includes a pokemon animation closing pokemon turned and then opening and then redirection to pokemon list component
+- add a pokemon move animation

@@ -44,7 +44,7 @@ export class PokemonListComponent implements OnInit {
   updateMode(){
     this.dataService.getMode().subscribe((mode) => {
       this.pokemonMode=mode;
-      this.pokemonMode =="default" ? this.default = true : this.default = false;
+      this.pokemonMode=="default" ? this.default = true : this.default = false;
       this.pokemonMode=="shiny" ? this.shiny = true : this.shiny = false;
     });
 
