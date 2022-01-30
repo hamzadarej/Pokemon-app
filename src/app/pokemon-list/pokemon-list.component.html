@@ -13,16 +13,26 @@
   >
     <img src="../../assets/images/pokeball.png" alt="poke-ball" class="poke-ball"/>
       <div class="boxImg">
-        <img
+        <img *ngIf="default"
           class="firstImg"
-          src="{{ pokemon.sprites.front_default }}"
+          src="{{pokemon.sprites.front_default}}"
           alt="{{ pokemon.name }}"
         />
-        <img
+        <img *ngIf="shiny"
+        class="firstImg"
+        src="{{pokemon.sprites.front_shiny}}"
+        alt="{{ pokemon.name }}"
+      />
+        <img *ngIf="default"
           class="hoverImg"
-          src="{{ pokemon.sprites.back_default }}"
+          src="{{ pokemon.sprites.back_default}}"
           alt="{{ pokemon.name }}"
         />
+        <img *ngIf="shiny"
+        class="hoverImg"
+        src="{{ pokemon.sprites.back_shiny}}"
+        alt="{{ pokemon.name }}"
+      />
       </div>
       <div class="poke-name">
         <h3>{{ pokemon.name | titlecase }}</h3>

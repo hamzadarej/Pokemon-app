@@ -8,13 +8,19 @@ import { DataService } from '../service/data.service';
 })
 export class NavComponent implements OnInit {
   userInput: string = '';
-  
+  selectedValue: string = 'default';
+
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     this.dataService.currentMessage.subscribe(
       (message) => (this.userInput = message)
     );
+    this.dataService.defaultMode.subscribe((mode) => (this.selectedValue = mode));
+  }
+  
+  getSelectedValue(value:string) {
+    this.dataService.setMode(value);
   }
   getValue(value: string) {
     this.dataService.setMessage(value.toLowerCase().trim());

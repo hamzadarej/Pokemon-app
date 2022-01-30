@@ -7,6 +7,7 @@ import {
   faArrowsAltV,
   faHeartbeat,
   faWeight,
+  faThList,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -18,7 +19,10 @@ export class PokemonListComponent implements OnInit {
   pokemonData: any[] = [];
   pokemonNumber: number = 0;
   pokemonLimit: number = 16;
+  pokemonMode:string="";
   page = 1;
+  shiny: boolean = false;
+  default: boolean = true;
   //icons variables
   faSkullCrossbones = faSkullCrossbones;
   faShieldAlt = faShieldAlt;
@@ -33,7 +37,19 @@ export class PokemonListComponent implements OnInit {
   errorMessage: string = '';
   ngOnInit(): void {
     this.getPokemon();
+    this.getInputUndFilter();
+    this.updateMode();
+  }
+  //methods
+  updateMode(){
+    this.dataService.getMode().subscribe((mode) => {
+      this.pokemonMode=mode;
+      this.pokemonMode =="default" ? this.default = true : this.default = false;
+      this.pokemonMode=="shiny" ? this.shiny = true : this.shiny = false;
+    });
 
+  }
+  getInputUndFilter() {
     this.dataService.getMessage().subscribe((message) => {
       this.userInput = message;
       //if the user enter something its going to get all the pokemon-list from the Api and search through
@@ -58,6 +74,7 @@ export class PokemonListComponent implements OnInit {
           if (element.name.includes(this.userInput)) {
             this.dataService.getMoreData(element.name).subscribe(
               (response: any) => {
+                console.log(response);
                 this.pokemonData.push(response);
                 this.error = false;
               },

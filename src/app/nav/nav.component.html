@@ -6,5 +6,11 @@
     #Input
     (keyup)="getValue(Input.value)"
   />
-  
+  <mat-form-field>
+    <mat-label>Poke-Mode</mat-label>
+    <mat-select [(value)]="selectedValue" >
+      <mat-option #Normal (click)="getSelectedValue(Normal.value)"  value="default">default</mat-option>
+      <mat-option #Shiny (click)="getSelectedValue(Shiny.value)"  value="shiny">shiny</mat-option>
+    </mat-select>
+  </mat-form-field>
 </nav>

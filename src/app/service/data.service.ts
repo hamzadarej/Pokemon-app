@@ -13,8 +13,19 @@ export class DataService {
   //including Observable subject to pass the data to all components
   private userInput = new Subject<string>();
   currentMessage = this.userInput.asObservable();
+//Observable subject for selectedMode
+  private selectedMode = new Subject<string>();
+  defaultMode=this.selectedMode.asObservable();
 
   constructor(private http: HttpClient) {}
+//implement a method to set and get the selected mode
+  setMode(mode: string) {
+    this.selectedMode.next(mode);
+  }
+  getMode(): Observable<string> {
+    return this.selectedMode.asObservable();
+  }
+
   //set the userInput in the nav(Header) :import
   setMessage(message: string) {
     this.userInput.next(message);
