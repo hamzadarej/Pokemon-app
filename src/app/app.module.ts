@@ -12,6 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LoaderComponent } from './loader/loader.component';
 import {LoaderInterceptor} from './loader/loader-intercepter';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -21,7 +23,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NavComponent,
     PokemonListComponent,
     FooterComponent,
-    LoaderComponent
+    LoaderComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatProgressSpinnerModule,
     BrowserAnimationsModule,
     NgxPaginationModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule.forRoot([
+      {path: '', component: PokemonListComponent},
+      {path: '**', component: NotFoundComponent},
+    ])
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:LoaderInterceptor,multi:true}

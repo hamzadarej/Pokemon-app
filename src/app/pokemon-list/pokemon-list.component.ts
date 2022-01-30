@@ -38,7 +38,7 @@ export class PokemonListComponent implements OnInit {
       this.userInput = message;
       //if the user enter something its going to get all the pokemon-list from the Api and search through
       if (this.userInput.length !== 0) {
-        this.pokemonLimit = 94;
+        this.pokemonLimit = 150;
       } else {
         this.pokemonLimit = 16;
         this.pokemonData = [];

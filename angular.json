@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "practice-app:build"
+            "browserTarget": "Pokemon-app:build"
           }
         },
         "test": {
