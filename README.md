@@ -14,7 +14,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
   <ol>
     <li><a href="#header">Header</a></li>
     <li><a href="#body">Body</a></li>
-    <li><a href="#footer">footer</a></li>
+    <li><a href="#footer">Footer</a></li>
     <li><a href="#error handling">Error handling</a></li>
   </ol>
 </details>
