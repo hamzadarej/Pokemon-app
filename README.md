@@ -16,7 +16,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
     <li><a href="#body">Body</a></li>
     <li><a href="#footer">Footer</a></li>
     <li><a href="#error handling">Error handling</a></li>
-  </ol>
+    <li><a href="#future improvements">Future improvements</a></li>
+ </ol>
 </details>
 
 ## Header
@@ -59,7 +60,7 @@ create a body component (name it PokemonListComponent) contains the following el
 - implement a RouterModule(router-outlet) to move between not found component and the main
 - implement a error message to show it to the user if the server response with an error or if the pokemon is not found
 
-## feature improvements
+## Future improvements
 
 - add a landing page includes a pokemon animation closing pokemon turned and then opening and then redirection to pokemon list component
 - add a pokemon move animation
