@@ -40,21 +40,27 @@ create a body component (name it PokemonListComponent) contains the following el
 - add a hover effect to the pokemon image to show the pokemon from back-side
 - implement pagination to show the next pokemon-list
 - get the user input value && the pokemonMode value from the service through a method getMessage() && getMode in order to filter the list of the pokemon and change the pokemon image mode
+- increment the number of pokemon when the user enter a litter in the input field from 16 from 150 in order to searching through the whole pokemon list
 
-## footer
+## Footer
 
--create a footer component (name it FooterComponent)
+- create a footer component (name it FooterComponent)
 
 - add a copyright text
 
 ## Error handling
 
-- implement a RouterModule(router-outlet) to move between not found page and the main
-- implement a loading spinner to handle the delay of the server response its loading till getting 200 status response
+- create a loader component && loader interceptor (name it LoaderComponent)
+- implement a loading spinner to handle the delay of the server response, its loading till getting 200 status response
+
+- create a not Found component (name it notFoundComponent)
+- handling the not founding route and get a msg with a link to back to pokemon list component
+
+- implement a RouterModule(router-outlet) to move between not found component and the main
 - implement a error message to show it to the user if the server response with an error or if the pokemon is not found
-- handling the not existing route and get a link to back to pokemon list component
 
 ## feature improvements
 
 - add a landing page includes a pokemon animation closing pokemon turned and then opening and then redirection to pokemon list component
 - add a pokemon move animation
+- working on unit tests
