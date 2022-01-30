@@ -1,4 +1,4 @@
-# PracticeApp
+# PokemonApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
 
@@ -6,22 +6,49 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Pages details
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#header">Header</a>
+      <ul>
+        <li><a href="#body">Body</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">footer</a>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+  </ol>
+</details>
 
-## Build
+## Header
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+create a header component (name it NavComponent):
+the header contains the following elements:
 
-## Running unit tests
+- title of the app
+- input field for searching pokemon
+- selector for change the pokemon image mode (default or shiny)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Body
 
-## Running end-to-end tests
+create a body component (name it PokemonListComponent):
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- get a image, title , type , image of the pokemon from the pokemon-api
+  the body contains the following elements:
+- list of pokemon with a different background color its depending on the pokemon type (grass, fire, water etc)
+- include background image for each pokemon as open pokemon-ball image
+- include icons to describe the pokemon details (height, weight, health, attack, defense, speed)
+- add a hover effect to the pokemon image to show the pokemon back-side
+- implement pagination to show the next pokemon
+- implement a loading spinner to show to handle the delay of the server response its loading till getting 200 status response
+- implement a error message to show it to the user if the server response with an error or if the pokemon is not found
+- handling the not existing route and get a link to back to pokemon list component
 
-## Further help
+## footer
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Usage
