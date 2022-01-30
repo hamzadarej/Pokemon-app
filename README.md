@@ -41,7 +41,7 @@ create a body component (name it PokemonListComponent) contains the following el
 - add a hover effect to the pokemon image to show the pokemon from back-side
 - implement pagination to show the next pokemon-list
 - get the user input value && the pokemonMode value from the service through a method getMessage() && getMode in order to filter the list of the pokemon and change the pokemon image mode
-- increment the number of pokemon when the user enter a litter in the input field from 16 from 150 in order to searching through the whole pokemon list
+- increment the number of pokemon when the user enter a litter in the input field from 16 to 150 pokemon in order to searching through the whole pokemon list
 
 ## Footer
 
